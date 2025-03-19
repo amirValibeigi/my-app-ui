@@ -39,18 +39,13 @@ export const styles = EStyleSheet.create({
     ],
   },
   loginInputs: {
-    // position: "relative",
     flex: 1,
-    padding: 8,
+    paddingHorizontal: 24,
     gap: 8,
     paddingVertical: 40,
   },
-  input: { backgroundColor: "#cfcfcf", minHeight: 40 },
+  input: { marginTop: 8 },
   loginButton: {
-    width: 60,
-    aspectRatio: 1,
-    borderRadius: "100%",
-    overflow: "hidden",
     margin: 15,
     marginHorizontal: 20,
     right: 0,
@@ -58,22 +53,13 @@ export const styles = EStyleSheet.create({
     position: "absolute",
     transform: [{ translateY: 60 }],
   },
-  loginButtonLayout: {
-    width: "100%",
-    height: "100%",
-  },
-  loginButtonBG: {
-    position: "absolute",
-    width: "100%",
-    height: "100%",
-  },
-  loginButtonIcon: {
-    flex: 1,
-    textAlign: "center",
-    textAlignVertical: "center",
+  rememberBody: {
+    marginTop: 8,
+    gap: 8,
+    flexDirection: "row",
   },
 
-  footerLayout: { height: 500, margin: 20 },
+  footerLayout: { margin: 20 },
   footerBody: {
     overflow: "hidden",
     top: -90,
@@ -103,26 +89,8 @@ export const styles = EStyleSheet.create({
   },
   alreadyAccountText: { marginTop: "auto", alignSelf: "center" },
   signUpButton: {
-    borderRadius: 22.5,
-    overflow: "hidden",
     margin: 15,
     marginHorizontal: 20,
     minHeight: 45,
-  },
-  signUpButtonLayout: {
-    flex: 1,
-  },
-  signUpButtonBG: {
-    position: "absolute",
-    width: "100%",
-    height: "100%",
-  },
-  signUpButtonText: {
-    flex: 1,
-    textAlign: "center",
-    textAlignVertical: "center",
-    color: "#fff",
-    fontWeight: "bold",
-    fontSize: 18,
   },
 });

@@ -2,18 +2,26 @@ import EStyleSheet from "react-native-extended-stylesheet";
 
 export const styles = EStyleSheet.create({
   container: {
-    width: 20,
+    width: 60,
     aspectRatio: 1,
-  },
-  body: {
-    backgroundColor: "#eaeaea",
-    flex: 1,
-    borderRadius: 4,
+    borderRadius: "100%",
     overflow: "hidden",
   },
-  checkIcon: {
+  layout: {
+    width: "100%",
+    height: "100%",
+  },
+  BG: {
+    position: "absolute",
+    width: "100%",
+    height: "100%",
+  },
+  icon: {
     flex: 1,
     textAlign: "center",
     textAlignVertical: "center",
+  },
+  loading: {
+    flex: 1,
   },
 });

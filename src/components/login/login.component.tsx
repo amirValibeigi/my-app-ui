@@ -1,33 +1,26 @@
-import { memo, useCallback } from "react";
 import {
+  ScrollView,
   StatusBar,
   StyleSheet,
   Text,
-  TextInput,
-  TouchableOpacity,
+  TouchableWithoutFeedback,
   View,
 } from "react-native";
 
+import Button from "@/components/button";
 import CheckBox from "@/components/check-box";
+import { Feather } from "@expo/vector-icons";
 import LinearGradientBG from "@/components/linear-gradient-bg";
-import { AntDesign } from "@expo/vector-icons";
-import { useNavigation } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
+import TextButton from "../text-button";
+import TextInput from "@/components/text-input";
+import { memo } from "react";
 import { styles } from "./login.component.styles";
+import { useLoginComponentHook } from "./login.component.hooks";
 
 function LoginComponent() {
-  const { navigate } = useNavigation();
-
-  const onPressLogin = useCallback(function onPressLoginCB() {
-    console.log("here");
-  }, []);
-
-  const onPressSignUp = useCallback(
-    function onPressSignUpCB() {
-      navigate("(auth)", { screen: "register" });
-    },
-    [navigate]
-  );
+  const { remember, onPressLogin, onPressSignUp, toggleRemember } =
+    useLoginComponentHook();
 
   return (
     <SafeAreaView style={styles.container}>
@@ -38,69 +31,57 @@ function LoginComponent() {
         gradientTransform="rotate(160,100,0)"
         width="100%"
       />
+      <ScrollView>
+        <Text style={styles.title}>Login</Text>
 
-      <Text style={styles.title}>Login</Text>
-
-      <View style={styles.body}>
-        <View style={styles.loginLayout}>
-          <View style={styles.loginBody}>
-            <View style={styles.loginCard}>
-              <View style={styles.loginCardFooter} />
-              <View style={styles.loginInputs}>
-                <TextInput style={styles.input} />
-                <TextInput style={styles.input} />
-                <CheckBox />
-              </View>
-              <TouchableOpacity
-                style={styles.loginButton}
-                onPress={onPressLogin}
-              >
-                <View style={styles.loginButtonLayout}>
-                  <View style={styles.loginButtonBG}>
-                    <LinearGradientBG />
-                  </View>
-
-                  <AntDesign
-                    style={styles.loginButtonIcon}
-                    name="arrowright"
-                    color="#fff"
-                    size={24}
+        <View style={styles.body}>
+          <View style={styles.loginLayout}>
+            <View style={styles.loginBody}>
+              <View style={styles.loginCard}>
+                <View style={styles.loginCardFooter} />
+                <View style={styles.loginInputs}>
+                  <TextInput
+                    containerStyle={styles.input}
+                    placeholder="EMAIL/MOBILE"
+                    icon={<Feather name="mail" size={20} />}
                   />
+                  <TextInput
+                    containerStyle={styles.input}
+                    placeholder="PASSWORD"
+                    secureTextEntry
+                    icon={<Feather name="lock" size={20} />}
+                  />
+
+                  <TouchableWithoutFeedback onPress={toggleRemember}>
+                    <View style={styles.rememberBody}>
+                      <CheckBox check={remember} />
+                      <Text>REMEMBER ME</Text>
+                    </View>
+                  </TouchableWithoutFeedback>
                 </View>
-              </TouchableOpacity>
+
+                <Button style={styles.loginButton} onPress={onPressLogin} />
+              </View>
+            </View>
+          </View>
+
+          <View style={styles.footerLayout}>
+            <View style={styles.footerBody}>
+              <View style={styles.footerCard}>
+                <View style={styles.footerCardFooter} />
+
+                <Text style={styles.alreadyAccountText}>
+                  Don't have an Account
+                </Text>
+
+                <TextButton style={styles.signUpButton} onPress={onPressSignUp}>
+                  SIGN UP
+                </TextButton>
+              </View>
             </View>
           </View>
         </View>
-
-        <View style={styles.footerLayout}>
-          <View style={styles.footerBody}>
-            <View style={styles.footerCard}>
-              <View style={styles.footerCardFooter} />
-
-              <Text style={styles.alreadyAccountText}>
-                Don't have an Account
-              </Text>
-
-              <TouchableOpacity
-                style={styles.signUpButton}
-                onPress={onPressSignUp}
-              >
-                <View style={styles.signUpButtonLayout}>
-                  <View style={styles.signUpButtonBG}>
-                    <LinearGradientBG
-                      color1="#2f5bbc"
-                      color2="#7334b7"
-                      offset2="0.7"
-                      gradientTransform="rotate(45,0,0)"
-                    />
-                  </View>
-                  <Text style={styles.signUpButtonText}>SIGN UP</Text>
-                </View>
-              </TouchableOpacity>
-            </View>
-          </View>
-        </View>
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }

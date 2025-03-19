@@ -2,18 +2,23 @@ import EStyleSheet from "react-native-extended-stylesheet";
 
 export const styles = EStyleSheet.create({
   container: {
-    width: 20,
-    aspectRatio: 1,
-  },
-  body: {
-    backgroundColor: "#eaeaea",
-    flex: 1,
-    borderRadius: 4,
+    borderRadius: 22.5,
     overflow: "hidden",
   },
-  checkIcon: {
+  body: {
+    flex: 1,
+  },
+  bg: {
+    position: "absolute",
+    width: "100%",
+    height: "100%",
+  },
+  text: {
     flex: 1,
     textAlign: "center",
     textAlignVertical: "center",
+    color: "#fff",
+    fontWeight: "bold",
+    fontSize: 18,
   },
 });
