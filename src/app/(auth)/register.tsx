@@ -1,10 +1,5 @@
-import { SafeAreaView } from "react-native-safe-area-context";
-import { Text } from "react-native";
+import RegisterComponent from "@/components/register/register.component";
 
 export default function RegisterScreen() {
-  return (
-    <SafeAreaView>
-      <Text>Register a</Text>
-    </SafeAreaView>
-  );
+  return <RegisterComponent />;
 }

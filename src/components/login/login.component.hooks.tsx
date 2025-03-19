@@ -6,9 +6,14 @@ export function useLoginComponentHook() {
   const { navigate } = useNavigation();
 
   const [remember, setRemember] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const onPressLogin = useCallback(function onPressLoginCB() {
-    console.log("here");
+    setIsLoading(true);
+
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
   }, []);
 
   const onPressSignUp = useCallback(
@@ -22,5 +27,5 @@ export function useLoginComponentHook() {
     setRemember((pv) => !pv);
   }, []);
 
-  return { remember, onPressLogin, onPressSignUp, toggleRemember };
+  return { isLoading, remember, onPressLogin, onPressSignUp, toggleRemember };
 }

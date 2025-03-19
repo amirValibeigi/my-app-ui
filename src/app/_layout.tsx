@@ -8,12 +8,12 @@ import {
   ThemeProvider,
 } from "@react-navigation/native";
 
-import { useColorScheme } from "@/hooks/useColorScheme";
-import { useFonts } from "expo-font";
+import ESStyles from "react-native-extended-stylesheet";
 import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
+import { useColorScheme } from "@/hooks/useColorScheme";
 import { useEffect } from "react";
-import ESStyles from "react-native-extended-stylesheet";
+import { useFonts } from "expo-font";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -38,7 +38,12 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-      <Stack>
+      <Stack
+        screenOptions={{
+          animation: "slide_from_right",
+          animationDuration: 100,
+        }}
+      >
         <Stack.Screen name="(auth)" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
       </Stack>

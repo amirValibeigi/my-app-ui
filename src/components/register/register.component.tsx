@@ -1,3 +1,4 @@
+import { Feather, Ionicons } from "@expo/vector-icons";
 import {
   ScrollView,
   StatusBar,
@@ -9,18 +10,22 @@ import {
 
 import Button from "@/components/button";
 import CheckBox from "@/components/check-box";
-import { Feather } from "@expo/vector-icons";
 import LinearGradientBG from "@/components/linear-gradient-bg";
 import { SafeAreaView } from "react-native-safe-area-context";
 import TextButton from "../text-button";
 import TextInput from "@/components/text-input";
 import { memo } from "react";
-import { styles } from "./login.component.styles";
-import { useLoginComponentHook } from "./login.component.hooks";
+import { styles } from "./register.component.styles";
+import { useRegisterComponentHook } from "./register.component.hooks";
 
-function LoginComponent() {
-  const { remember, isLoading, onPressLogin, onPressSignUp, toggleRemember } =
-    useLoginComponentHook();
+function RegisterComponent() {
+  const {
+    remember,
+    isLoading,
+    onPressRegister,
+    onPressSignIn,
+    toggleRemember,
+  } = useRegisterComponentHook();
 
   return (
     <SafeAreaView style={styles.container}>
@@ -32,14 +37,20 @@ function LoginComponent() {
         width="100%"
       />
       <ScrollView>
-        <Text style={styles.title}>Login</Text>
+        <Text style={styles.title}>SIGN UP</Text>
 
         <View style={styles.body}>
-          <View style={styles.loginLayout}>
-            <View style={styles.loginBody}>
-              <View style={styles.loginCard}>
-                <View style={styles.loginCardFooter} />
-                <View style={styles.loginInputs}>
+          <View style={styles.registerLayout}>
+            <View style={styles.registerBody}>
+              <View style={styles.registerCard}>
+                <View style={styles.registerCardFooter} />
+                <View style={styles.registerInputs}>
+                  <TextInput
+                    containerStyle={styles.input}
+                    placeholder="NAME"
+                    returnKeyType="next"
+                    icon={<Ionicons name="person-outline" size={20} />}
+                  />
                   <TextInput
                     containerStyle={styles.input}
                     placeholder="EMAIL/MOBILE"
@@ -56,15 +67,15 @@ function LoginComponent() {
                   <TouchableWithoutFeedback onPress={toggleRemember}>
                     <View style={styles.rememberBody}>
                       <CheckBox check={remember} />
-                      <Text>REMEMBER ME</Text>
+                      <Text>Agree to our Terms & Conditions</Text>
                     </View>
                   </TouchableWithoutFeedback>
                 </View>
 
                 <Button
-                  style={styles.loginButton}
+                  style={styles.registerButton}
                   loading={isLoading}
-                  onPress={onPressLogin}
+                  onPress={onPressRegister}
                 />
               </View>
             </View>
@@ -76,11 +87,11 @@ function LoginComponent() {
                 <View style={styles.footerCardFooter} />
 
                 <Text style={styles.alreadyAccountText}>
-                  Don't have an Account
+                  Already have an Account
                 </Text>
 
-                <TextButton style={styles.signUpButton} onPress={onPressSignUp}>
-                  SIGN UP
+                <TextButton style={styles.signUpButton} onPress={onPressSignIn}>
+                  LOGIN
                 </TextButton>
               </View>
             </View>
@@ -91,4 +102,4 @@ function LoginComponent() {
   );
 }
 
-export default memo(LoginComponent);
+export default memo(RegisterComponent);

@@ -1,0 +1,96 @@
+import EStyleSheet from "react-native-extended-stylesheet";
+
+export const styles = EStyleSheet.create({
+  container: { flex: 1, flexGrow: 1 },
+  body: { flex: 1, flexGrow: 1 },
+  title: {
+    margin: 20,
+    alignSelf: "center",
+    color: "#fff",
+    fontSize: 26,
+    fontWeight: "bold",
+  },
+  registerLayout: {
+    height: 430,
+    marginHorizontal: 20,
+    zIndex: 1,
+  },
+  registerBody: { overflow: "hidden", minHeight: 440 },
+  registerCard: {
+    width: "100%",
+    minHeight: 370,
+    backgroundColor: "#fff",
+    borderRadius: 40,
+    borderEndEndRadius: 0,
+  },
+  registerCardFooter: {
+    width: "102%",
+    height: 100,
+    backgroundColor: "#fff",
+    borderRadius: 50,
+    borderTopRightRadius: 30,
+    borderTopEndRadius: 10,
+    position: "absolute",
+    bottom: 0,
+    transform: [
+      { translateY: "40%" },
+      { translateX: "-1%" },
+      { rotateZ: "14deg" },
+    ],
+  },
+  registerInputs: {
+    flex: 1,
+    paddingHorizontal: 24,
+    gap: 8,
+    paddingVertical: 40,
+  },
+  input: { marginTop: 8 },
+  registerButton: {
+    margin: 15,
+    marginHorizontal: 20,
+    right: 0,
+    bottom: 0,
+    position: "absolute",
+    transform: [{ translateY: 60 }],
+  },
+  rememberBody: {
+    marginTop: 8,
+    gap: 8,
+    flexDirection: "row",
+  },
+
+  footerLayout: { margin: 20 },
+  footerBody: {
+    overflow: "hidden",
+    top: -65,
+  },
+  footerCard: {
+    width: "100%",
+    height: 120,
+    backgroundColor: "#fff",
+    borderRadius: 40,
+    borderStartStartRadius: 0,
+    marginTop: 80,
+  },
+  footerCardFooter: {
+    width: "102%",
+    height: 100,
+    backgroundColor: "#fff",
+    borderRadius: 50,
+    borderBottomLeftRadius: 30,
+    borderBottomStartRadius: 10,
+    position: "absolute",
+    top: 0,
+    transform: [
+      { translateY: "-38%" },
+      { translateX: "-1%" },
+      { rotateZ: "14deg" },
+    ],
+  },
+  alreadyAccountText: { marginTop: "auto", alignSelf: "center" },
+  signUpButton: {
+    margin: 15,
+    marginHorizontal: 20,
+    minHeight: 45,
+  },
+});
