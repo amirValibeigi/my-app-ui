@@ -8,15 +8,15 @@ import {
   View,
 } from "react-native";
 
-import Button from "@/components/button";
-import CheckBox from "@/components/check-box";
-import LinearGradientBG from "@/components/linear-gradient-bg";
+import Button from "@/components/login-v1/button";
+import CheckBox from "@/components/login-v1/check-box";
+import LinearGradientBG from "@/components/login-v1/linear-gradient-bg";
+import TextInput from "@/components/login-v1/text-input";
+import { memo } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import TextButton from "../text-button";
-import TextInput from "@/components/text-input";
-import { memo } from "react";
-import { styles } from "./register.component.styles";
 import { useRegisterComponentHook } from "./register.component.hooks";
+import { styles } from "./register.component.styles";
 
 function RegisterComponent() {
   const {

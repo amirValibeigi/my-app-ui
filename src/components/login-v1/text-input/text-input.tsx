@@ -1,11 +1,11 @@
-import { TextInput as RNTextInput, Text, View } from "react-native";
 import React, { memo } from "react";
+import { TextInput as RNTextInput, Text, View } from "react-native";
 
-import LinearGradientBG from "@/components/linear-gradient-bg";
+import LinearGradientBG from "@/components/login-v1/linear-gradient-bg";
 import Reanimated from "react-native-reanimated";
-import { TextInputProps } from "./text-input.types";
-import { styles } from "./text-input.styles";
 import { useTextInputHook } from "./text-input.hooks";
+import { styles } from "./text-input.styles";
+import { TextInputProps } from "./text-input.types";
 
 export default memo<TextInputProps>(function TextInput({
   containerStyle,

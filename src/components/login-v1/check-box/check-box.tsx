@@ -1,12 +1,12 @@
 import React, { memo } from "react";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 
+import LinearGradientBG from "@/components/login-v1/linear-gradient-bg";
 import { AntDesign } from "@expo/vector-icons";
-import { CheckBoxProps } from "./check-box.types";
-import LinearGradientBG from "@/components/linear-gradient-bg";
 import Reanimated from "react-native-reanimated";
-import { styles } from "./check-box.styles";
 import { useCheckBoxHook } from "./check-box.hooks";
+import { styles } from "./check-box.styles";
+import { CheckBoxProps } from "./check-box.types";
 
 export default memo<CheckBoxProps>(function CheckBox(props) {
   const { checkBGAnimatedStyle, toggleCheck } = useCheckBoxHook(props);

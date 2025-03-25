@@ -8,12 +8,12 @@ import {
   ThemeProvider,
 } from "@react-navigation/native";
 
-import ESStyles from "react-native-extended-stylesheet";
+import { useColorScheme } from "@/hooks/useColorScheme";
+import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
-import { useColorScheme } from "@/hooks/useColorScheme";
 import { useEffect } from "react";
-import { useFonts } from "expo-font";
+import ESStyles from "react-native-extended-stylesheet";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -23,7 +23,7 @@ ESStyles.build({});
 export default function RootLayout() {
   const colorScheme = useColorScheme();
   const [loaded] = useFonts({
-    SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
+    SpaceMono: require("@/assets/fonts/SpaceMono-Regular.ttf"),
   });
 
   useEffect(() => {
@@ -44,7 +44,9 @@ export default function RootLayout() {
           animationDuration: 100,
         }}
       >
-        <Stack.Screen name="(auth)" options={{ headerShown: false }} />
+        <Stack.Screen name="index" options={{ headerShown: false }} />
+        <Stack.Screen name="(auth)/v1" options={{ headerShown: false }} />
+        <Stack.Screen name="(auth)/v2" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
       </Stack>
       <StatusBar style="auto" />

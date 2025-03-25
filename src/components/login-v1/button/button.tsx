@@ -1,10 +1,10 @@
-import { ActivityIndicator, TouchableOpacity, View } from "react-native";
 import React, { memo } from "react";
+import { ActivityIndicator, TouchableOpacity, View } from "react-native";
 
+import LinearGradientBG from "@/components/login-v1/linear-gradient-bg";
 import { AntDesign } from "@expo/vector-icons";
-import { ButtonProps } from "./button.types";
-import LinearGradientBG from "../linear-gradient-bg";
 import { styles } from "./button.styles";
+import { ButtonProps } from "./button.types";
 
 export default memo<ButtonProps>(function Button({ loading, style, onPress }) {
   return (

@@ -7,16 +7,16 @@ import {
   View,
 } from "react-native";
 
-import Button from "@/components/button";
-import CheckBox from "@/components/check-box";
+import Button from "@/components/login-v1/button";
+import CheckBox from "@/components/login-v1/check-box";
+import LinearGradientBG from "@/components/login-v1/linear-gradient-bg";
+import TextInput from "@/components/login-v1/text-input";
 import { Feather } from "@expo/vector-icons";
-import LinearGradientBG from "@/components/linear-gradient-bg";
+import { memo } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import TextButton from "../text-button";
-import TextInput from "@/components/text-input";
-import { memo } from "react";
-import { styles } from "./login.component.styles";
 import { useLoginComponentHook } from "./login.component.hooks";
+import { styles } from "./login.component.styles";
 
 function LoginComponent() {
   const { remember, isLoading, onPressLogin, onPressSignUp, toggleRemember } =

@@ -1,9 +1,9 @@
 import React, { memo } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 
-import LinearGradientBG from "@/components/linear-gradient-bg";
-import { TextButtonProps } from "./text-button.types";
+import LinearGradientBG from "@/components/login-v1/linear-gradient-bg";
 import { styles } from "./text-button.styles";
+import { TextButtonProps } from "./text-button.types";
 
 export default memo<TextButtonProps>(function Button({
   children,
