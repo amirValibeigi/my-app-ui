@@ -1,7 +1,8 @@
-import React, { memo } from "react";
+import React, { memo, useMemo } from "react";
 import Svg, {
   Defs,
   LinearGradient,
+  LinearGradientProps,
   NumberProp,
   Rect,
   Stop,
@@ -13,21 +14,40 @@ type LinearGradientBGProps = {
   color2?: string;
   offset1?: NumberProp;
   offset2?: NumberProp;
-  gradientTransform?: string;
+  gradientTransform?: string | null;
+  lg?: Omit<LinearGradientProps, "gradientTransform" | "id" | "children">;
 } & SvgProps;
 
-export default memo<LinearGradientBGProps>(function LinearGradientBG({
-  color1 = "#7334b7",
-  color2 = "#2f5bbc",
-  gradientTransform = "rotate(160,20,0)",
-  offset1 = 0,
-  offset2 = 1,
-  ...rest
-}) {
+export default memo<LinearGradientBGProps>(function LinearGradientBG(props) {
+  const {
+    color1 = "#7334b7",
+    color2 = "#2f5bbc",
+    gradientTransform: gradientTransformProps,
+    offset1 = 0,
+    offset2 = 1,
+    lg,
+    ...rest
+  } = props;
+
+  const gradientTransform = useMemo(
+    function getGradientTransformCB() {
+      if (gradientTransformProps === null) {
+        return;
+      }
+      if (gradientTransformProps === undefined) {
+        return "rotate(160,20,0)";
+      }
+
+      return gradientTransformProps;
+    },
+    [gradientTransformProps]
+  );
+
   return (
     <Svg {...rest}>
       <Defs>
-        <LinearGradient id="grad" gradientTransform={gradientTransform}>
+        <LinearGradient id="P" gradientUnits="userSpaceOnUse" />
+        <LinearGradient id="grad" gradientTransform={gradientTransform} {...lg}>
           <Stop offset={offset1} stopColor={color1} />
           <Stop offset={offset2} stopColor={color2} />
         </LinearGradient>

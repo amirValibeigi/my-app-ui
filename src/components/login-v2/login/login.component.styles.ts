@@ -40,7 +40,7 @@ export const styles = EStyleSheet.create({
     backgroundColor: "#fff",
     maxWidth: "90%",
     minWidth: "85%",
-    minHeight: "60%",
+    minHeight: "65%",
     alignSelf: "center",
     marginVertical: "auto",
     borderRadius: 10,
@@ -82,4 +82,47 @@ export const styles = EStyleSheet.create({
   star4Card: { top: "25%", left: "6%", transform: [{ scale: 0.6 }] },
   star5Card: { top: "19%", left: "40%", transform: [{ scale: 0.6 }] },
   star6Card: { top: "25%", left: "32%" },
+  headerCard: {
+    position: "absolute",
+    alignItems: "center",
+    gap: 12,
+    alignSelf: "center",
+    marginTop: "32%",
+  },
+  dyhaTextHeaderCard: {
+    color: "#fff",
+    fontSize: 18,
+    fontWeight: "300",
+  },
+  signupTextHeaderCard: {
+    fontSize: 16,
+    backgroundColor: "#fff",
+    borderRadius: 20,
+    paddingVertical: 4,
+    fontWeight: "300",
+    paddingHorizontal: 12,
+  },
+  welcomeTextHeaderCard: {
+    color: "#fff",
+    fontWeight: "bold",
+    fontSize: 22,
+  },
+
+  bodyCard: {
+    marginTop: "80%",
+    alignItems: "center",
+    gap: 20,
+    marginVertical: 12,
+  },
+  containerTextInput: {
+    minWidth: "65%",
+    overflow: "hidden",
+    borderRadius: 20,
+  },
+  textInput: {
+    color: "#fff",
+  },
+  iconTextInput: {
+    marginHorizontal: 8,
+  },
 });
