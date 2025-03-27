@@ -7,7 +7,6 @@ import { TextInputProps } from "./text-input.types";
 
 export default memo<TextInputProps>(function TextInput({
   containerStyle,
-  placeholder,
   icon,
   style,
   ...rest

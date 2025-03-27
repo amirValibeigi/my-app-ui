@@ -121,8 +121,10 @@ export const styles = EStyleSheet.create({
   },
   textInput: {
     color: "#fff",
+    textAlign: "center",
   },
   iconTextInput: {
+    position: "absolute",
     marginHorizontal: 8,
   },
 });

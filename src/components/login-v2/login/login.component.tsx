@@ -111,6 +111,8 @@ export default memo(function LoginComponent() {
           <TextInput
             style={styles.textInput}
             containerStyle={styles.containerTextInput}
+            placeholder="Username"
+            placeholderTextColor="#fff"
             icon={
               <Ionicons
                 style={styles.iconTextInput}
@@ -123,6 +125,8 @@ export default memo(function LoginComponent() {
           <TextInput
             style={styles.textInput}
             containerStyle={styles.containerTextInput}
+            placeholder="Password"
+            placeholderTextColor="#fff"
             secureTextEntry
             icon={
               <Feather
